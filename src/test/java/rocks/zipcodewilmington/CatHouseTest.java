@@ -14,6 +14,12 @@ import rocks.zipcodewilmington.animals.animal_storage.CatHouse;
 public class CatHouseTest {
 
 
+    @Before
+    public void startUp()
+    {
+       CatHouse testCatHouse=new CatHouse();
+
+    }
 
 
     // TODO - Create tests for `void add(Cat cat)`
@@ -59,7 +65,7 @@ public class CatHouseTest {
     @Test
     public void removeByCatTest() {
         // given
-        Cat catToBeAdded = new Cat(null, null,2);
+        Cat catToBeAdded = new Cat(null, null, 0);
         CatHouse.add(catToBeAdded);
         Integer id = catToBeAdded.getId();
 
