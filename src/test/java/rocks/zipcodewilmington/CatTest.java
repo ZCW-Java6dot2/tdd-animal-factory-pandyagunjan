@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import rocks.zipcodewilmington.animals.Animal;
 import rocks.zipcodewilmington.animals.Cat;
+import rocks.zipcodewilmington.animals.Dog;
 import rocks.zipcodewilmington.animals.Mammal;
 
 import java.util.Date;
@@ -19,6 +20,28 @@ public class CatTest {
     public void setup() {
         this.cat = new Cat();
     }
+
+    @Test
+    public void constructorTest() {
+        // Given (cat data)
+        String givenName = "Zula";
+        Date givenBirthDate = new Date();
+        Integer givenId = 0;
+
+        // When (a cat is constructed)
+        Cat cat = new Cat(givenName, givenBirthDate, givenId);
+
+        // When (we retrieve data from the cat)
+        String retrievedName = cat.getName();
+        Date retrievedBirthDate = cat.getBirthDate();
+        Integer retrievedId = cat.getId();
+
+        // Then (we expect the given data, to match the retrieved data)
+        Assert.assertEquals(givenName, retrievedName); //
+        Assert.assertEquals(givenBirthDate, retrievedBirthDate);
+        Assert.assertEquals(givenId, retrievedId);
+    }
+
 
     // TODO - Create tests for `void setName(String name)`
     @Test
@@ -41,10 +64,12 @@ public class CatTest {
         String expected = "meow!";
 
         // when
-        String actual = cat.speak();
+        //String actual = cat.speak();
+        cat.setName(expected);
+     //Modified to set the name first and then speak it.
 
         // then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, cat.speak());
     }
 
 
@@ -105,27 +130,20 @@ public class CatTest {
         Assert.assertTrue(outcome);
     }
 
-
-
     @Test
-    public void constructorTest() {
-        // Given (cat data)
+    public void getId()
+    {
         String givenName = "Zula";
         Date givenBirthDate = new Date();
-        Integer givenId = 0;
+        Integer givenId = 5;
 
         // When (a cat is constructed)
         Cat cat = new Cat(givenName, givenBirthDate, givenId);
 
-        // When (we retrieve data from the cat)
-        String retrievedName = cat.getName();
-        Date retrievedBirthDate = cat.getBirthDate();
-        Integer retrievedId = cat.getId();
+        Assert.assertEquals(givenId,cat.getId());
 
-        // Then (we expect the given data, to match the retrieved data)
-        Assert.assertEquals(givenName, retrievedName); //
-        Assert.assertEquals(givenBirthDate, retrievedBirthDate);
-        Assert.assertEquals(givenId, retrievedId);
     }
+
+
 
 }
