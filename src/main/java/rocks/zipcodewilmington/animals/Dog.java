@@ -12,7 +12,7 @@ public class Dog extends Mammal {
     }
 
     public Dog() {
-        this(null,null,null);
+        this(null,null,1);
     }
 
     public String speak() {

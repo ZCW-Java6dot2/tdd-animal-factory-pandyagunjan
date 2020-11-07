@@ -17,6 +17,7 @@ public class DogHouseTest {
     // TODO - Create tests for `Dog getDogById(Integer id)`
     // TODO - Create tests for `Integer getNumberOfDogs()`
 
+    private DogHouse DogHouse;
     @Test
     public void testGetNumberOfDogs() {
         // Given (some
