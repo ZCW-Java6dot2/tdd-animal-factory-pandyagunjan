@@ -10,7 +10,7 @@ public class Cat extends Mammal {
         super(name, birthDate, id);
     }
     public Cat() {
-        this(null ,null, 1);
+        this(null ,null, null);
     }
 
     public String speak() {

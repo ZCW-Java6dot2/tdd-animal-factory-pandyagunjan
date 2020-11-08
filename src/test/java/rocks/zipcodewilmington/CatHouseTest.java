@@ -52,7 +52,7 @@ public class CatHouseTest {
         Integer id = catToBeAdded.getId();
 
         // when
-        CatHouse.remove(id);
+        CatHouse.remove(defaultId);;
         Cat retrievedCat = CatHouse.getCatById(id);
 
         // then
